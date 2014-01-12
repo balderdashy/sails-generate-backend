@@ -8,8 +8,8 @@
  */
 module.exports = {
 	targets: {
-		'./:arg0': { exec: function (scope, cb) {
-			scope.output.push('Running generator (sails-generate-backend) @ `'+scope.rootPath+'`...');
+		'.': { exec: function (scope, cb) {
+			console.log('Running generator (sails-generate-backend) @ `'+scope.rootPath+'`...');
 			cb();
 		} }
 	}
