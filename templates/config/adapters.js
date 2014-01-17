@@ -1,5 +1,5 @@
 /**
- * Connections / Adapters / Models
+ * Connections
  * 
  * The `connections` configuration object lets you create different global "saved settings"
  * that you can mix and match in your models.  The `default` option indicates which 
@@ -16,10 +16,9 @@ module.exports.connections = {
 
   // Local disk storage for DEVELOPMENT ONLY
   //
-  // Installed by default- 
-  // see `module.exports.model` below to change this.
+  // Installed by default.
   //
-  dev_db: {
+  localDiskDb: {
     adapter: 'sails-disk'
   },
 
@@ -29,7 +28,7 @@ module.exports.connections = {
   // Run:
   // npm install sails-mysql
   //
-  local_mysql_database: {
+  someMysqlServer: {
     adapter : 'sails-mysql',
     host    : 'YOUR_MYSQL_SERVER_HOSTNAME_OR_IP_ADDRESS',
     user    : 'YOUR_MYSQL_USER',
@@ -43,7 +42,7 @@ module.exports.connections = {
   // Run:
   // npm install sails-mongo
   //
-  local_mongo_database: {
+  someMongodbServer: {
     adapter   : 'sails-mongo',
     host      : 'localhost',
     port      : 27017,
@@ -58,7 +57,7 @@ module.exports.connections = {
   // Run:
   // npm install sails-postgresql
   //
-  local_postgresql_database: {
+  somePostgresqlServer: {
     adapter   : 'sails-postgresql',
     host      : 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
     user      : 'YOUR_POSTGRES_USER',
@@ -67,27 +66,11 @@ module.exports.connections = {
   }
 
 
-  // More adapters here:
-  // https://github.com/balderdashy/sails-docs/blob/0.9/api.adapter-interface.md#offcially-supported-adapters
+  // More adapters:
+  // https://github.com/balderdashy/sails
 
 };
 
-
-
-
-
-/**
- * Default model definition
- *
- * Unless you override them in each model file, the following options
- * will be included in all of your models by default:
- */
-module.exports.model = {
- 
-  // The default connection(s) to use with your models
-  // i.e. your app's primary database
-  connections: [ 'dev_db' ]
-};
 
 
 
