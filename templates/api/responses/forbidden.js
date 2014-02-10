@@ -3,7 +3,7 @@
  *
  * Usage:
  * return res.forbidden('Access denied.');
- * 
+ *
  * @param {String|Object|Array} message
  *      optional message to inject into view locals or JSON response
  *
@@ -37,8 +37,9 @@ module.exports = function forbidden(message) {
   for (var key in result) {
     res.locals[key] = result[key];
   }
+
   // And render view
-  res.render(viewFilePath, result, function(err) {
+  res.render(viewFilePath, result, function (err) {
     // If the view doesn't exist, or an error occured, send json
     if (err) {
       return res.json(result, result.status);

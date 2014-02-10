@@ -14,14 +14,14 @@ var Generator = require('../lib');
 
 
 sailsgen(Generator, {
-	rootPath: process.cwd(),
+  rootPath: process.cwd(),
 
-	// You can stub other scope variables here, e.g.
-	// foo: 'bar'
+  // You can stub other scope variables here, e.g.
+  // foo: 'bar'
 
 }, function (err) {
-	if (err) throw err;
+  if (err) throw err;
 
-	// It worked!
-	console.log('Done.');
+  // It worked!
+  console.log('Done.');
 });

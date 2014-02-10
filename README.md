@@ -22,7 +22,7 @@ $ npm install sails-generate-backend
 ##### On the command line
 
 ```sh
-$ sails generate backend 
+$ sails generate backend
 ```
 
 ##### In a node script

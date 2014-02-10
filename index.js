@@ -1,31 +1,32 @@
 /**
  * sails-generate-backend
- * 
+ *
  * Usage:
  * `sails-generate-backend`
- * 
+ *
  * @type {Object}
  */
 module.exports = {
-	targets: {
-		'.': { exec: function (scope, cb) {
-			console.log('Running generator (sails-generate-backend) @ `'+scope.rootPath+'`...');
-			cb();
-		} }
-	}
+  targets: {
+    '.': {
+      exec: function (scope, cb) {
+        console.log('Running generator (sails-generate-backend) @ `' + scope.rootPath + '`...');
+        cb();
+      }
+    }
+  }
 };
 
-
 // Generator syntax:
-// 
+//
 // You can use params in your target paths:
 // {
 //   './:someScopeVariable/somethingStatic/:somethingDynamicAgain': '...'
 // }
 
 // Other directives:
-// 
-// 
+//
+//
 // Generate a folder: (`folder`)
 // './:arg0/controllers': { folder: {} }
 //
