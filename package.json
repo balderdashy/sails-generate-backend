@@ -26,10 +26,9 @@
   },
   "sails": {
     "generator": {
-      "name": "backend",
+      "type": "backend",
       "behavior": "overrides `sails generate backend`",
-      "sailsVersion": "~0.10.0",
-      "main": "lib/index"
+      "sailsVersion": "~0.10.0"
     }
   }
 }
