@@ -1,6 +1,6 @@
 /**
  * 500 (Server Error) Handler
- * 
+ *
  * Usage:
  * return res.serverError(err);
  *
@@ -11,7 +11,7 @@
  * error is encountered, Sails will call `res.serverError()`.
  */
 
-module.exports = function serverError (errors) {
+module.exports = function serverError(errors) {
 
   // Get access to `req` and `res`
   var req = this.req;
@@ -25,7 +25,7 @@ module.exports = function serverError (errors) {
     status: statusCode
   };
 
-  // Normalize a {String|Object|Error} or array of {String|Object|Error} 
+  // Normalize a {String|Object|Error} or array of {String|Object|Error}
   // into an array of proper, readable {Error}
   var errorsToDisplay = sails.util.normalizeErrors(errors);
   for (i in errorsToDisplay) {
@@ -59,21 +59,17 @@ module.exports = function serverError (errors) {
     return res.json(result);
   }
 
-
   // Make data more readable for view locals
   var locals = _.mapValues(result, function readabilify(value) {
     if (sails.util.isArray(value)) {
       return _.map(value, sails.util.inspect);
-    }
-    else if (sails.util.isPlainObject(value)) {
+    } else if (sails.util.isPlainObject(value)) {
       return sails.util.inspect(value);
-    }
-    else return value;
+    } else return value;
   });
 
-
   // And try to render view
-  res.render(viewFilePath, locals, function(err) {
+  res.render(viewFilePath, locals, function (err) {
     // But if the view doesn't exist, or a rendering error occured, just send JSON
     if (err) return res.json(result);
 

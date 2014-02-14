@@ -6,7 +6,7 @@
  *   'Please choose a valid `password` (6-12 characters)',
  *   '/trial/signup'
  * );
- * 
+ *
  * @param {Array|Object|String} validationErrors
  *      optional errors
  *      usually an array of validation errors from the ORM
@@ -19,7 +19,7 @@
  */
 
 module.exports = function badRequest(validationErrors, redirectTo) {
-  
+
   // Get access to `req` and `res`
   var req = this.req;
   var res = this.res;
@@ -36,7 +36,7 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   }
 
   // For requesters expecting JSON, everything works like you would expect-- a simple JSON response
-  // indicating the 400: Bad Request status with relevant information will be returned. 
+  // indicating the 400: Bad Request status with relevant information will be returned.
   if (req.wantsJSON) {
     return res.json(result, result.status);
   }
@@ -57,8 +57,7 @@ module.exports = function badRequest(validationErrors, redirectTo) {
     return res.redirect(redirectTo);
   }
 
-
-  // Depending on your app's needs, you may choose to look at the Referer header here 
+  // Depending on your app's needs, you may choose to look at the Referer header here
   // and redirect back. Please do so at your own risk!
   // For security reasons, Sails does not provide this affordance by default.
   // It's safest to provide a 'redirectTo' URL and redirect there directly.

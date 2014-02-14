@@ -1,22 +1,22 @@
 /**
- * 403 (Forbidden) Handler
+ * 401 (Unauhtorized) Handler
  *
  * Usage:
- * return res.forbidden('Access denied.');
+ * return res.unauthorized('Unauthorized request.');
  *
  * @param {String|Object|Array} message
  *      optional message to inject into view locals or JSON response
  *
  */
 
-module.exports = function forbidden(message) {
+module.exports = function unauthorized(message) {
 
   // Get access to `req` and `res`
   var req = this.req;
   var res = this.res;
 
-  var viewFilePath = '403';
-  var statusCode = 403;
+  var viewFilePath = '401';
+  var statusCode = 401;
 
   var result = {
     status: statusCode
@@ -37,7 +37,6 @@ module.exports = function forbidden(message) {
   for (var key in result) {
     res.locals[key] = result[key];
   }
-
   // And render view
   res.render(viewFilePath, result, function (err) {
     // If the view doesn't exist, or an error occured, send json
@@ -45,7 +44,7 @@ module.exports = function forbidden(message) {
       return res.json(result, result.status);
     }
 
-    // Otherwise, serve the `views/403.*` page
+    // Otherwise, serve the `views/401.*` page
     res.render(viewFilePath);
   });
 };
