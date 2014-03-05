@@ -1,6 +1,6 @@
 {
   "name": "sails-generate-backend",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "description": "Generate a backend for Sails.",
   "main": "lib/index.js",
   "scripts": {
@@ -25,8 +25,8 @@
     "fs-extra": "*"
   },
   "sailsGenerator": {
-      "type": "backend",
-      "behavior": "overrides `sails generate backend`",
-      "sailsVersion": "~0.10.0"
+    "type": "backend",
+    "behavior": "overrides `sails generate backend`",
+    "sailsVersion": "~0.10.0"
   }
 }
