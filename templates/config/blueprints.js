@@ -14,7 +14,7 @@
  * key in any of your controller files, and assigning it an object, e.g.:
  * {
  *     // ...
- *     _config: { blueprints: { rest: false } }
+ *     _config: { rest: false }
  *     // ...
  * }
  *
