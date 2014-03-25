@@ -19,27 +19,11 @@
  */
 
 module.exports = function badRequest(validationErrors, redirectTo) {
-  
-  // Get access to `req`, `res`, `sails`
   var req = this.req;
   var res = this.res;
-  var sails = req._sails;
 
-  var statusCode = 400;
-
-  var result = {
-    status: statusCode
-  };
-
-  // Optional validationErrors object
-  if (validationErrors) {
-    result.validationErrors = validationErrors;
-  }
-
-  // For requesters expecting JSON, everything works like you would expect-- a simple JSON response
-  // indicating the 400: Bad Request status with relevant information will be returned. 
   if (req.wantsJSON) {
-    return res.json(result, result.status);
+    return res.json(err, 400);
   }
 
   // For traditional (not-AJAX) web forms, this middleware follows best-practices
@@ -52,7 +36,7 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   if (redirectTo) {
 
     // Set flash message called `errors` (one-time-use in session)
-    req.flash('errors', validationErrors);
+    req.flash('errors', err);
 
     // then redirect back to the `redirectTo` URL
     return res.redirect(redirectTo);
@@ -65,5 +49,5 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   // It's safest to provide a 'redirectTo' URL and redirect there directly.
 
   // If `redirectTo` was not specified, just respond w/ JSON
-  return res.json(result, result.status);
+  return res.json(err, 400);
 };
