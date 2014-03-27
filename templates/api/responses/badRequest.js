@@ -7,7 +7,7 @@
  *   '/trial/signup'
  * );
  * 
- * @param {Array|Object|String} validationErrors
+ * @param {Array|Object|String} errors
  *      optional errors
  *      usually an array of validation errors from the ORM
  *
@@ -18,7 +18,7 @@
  *      since if this was triggered from an AJAX or socket request, JSON should be sent instead.
  */
 
-module.exports = function badRequest(validationErrors, redirectTo) {
+module.exports = function badRequest(errors, redirectTo) {
   var req = this.req;
   var res = this.res;
 
@@ -32,7 +32,7 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   if (!req.wantsJSON && redirectTo) {
 
     // Set flash message called `errors` (one-time-use in session)
-    req.flash('errors', err);
+    req.flash('errors', errors);
 
     // then redirect back to the `redirectTo` URL
     return res.redirect(redirectTo);
@@ -44,5 +44,5 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   // It's safest to provide a 'redirectTo' URL and redirect there directly.
 
   // If `redirectTo` was not specified, just respond w/ JSON
-  return res.json(err, 400);
+  return res.json(errors, 400);
 };
