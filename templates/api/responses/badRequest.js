@@ -22,10 +22,6 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   var req = this.req;
   var res = this.res;
 
-  if (req.wantsJSON) {
-    return res.json(err, 400);
-  }
-
   // For traditional (not-AJAX) web forms, this middleware follows best-practices
   // for when a user submits invalid form data:
   // i.   First, a one-time-use flash variable is populated, probably a string message or an array
@@ -33,7 +29,7 @@ module.exports = function badRequest(validationErrors, redirectTo) {
   // ii.  Then the  user is redirected back to `redirectTo`, i.e. the URL where the bad request originated.
   // iii. There, the controller and/or view might use the flash `errors` to either display a message or highlight
   //      the invalid HTML form fields.
-  if (redirectTo) {
+  if (!req.wantsJSON && redirectTo) {
 
     // Set flash message called `errors` (one-time-use in session)
     req.flash('errors', err);
@@ -41,7 +37,6 @@ module.exports = function badRequest(validationErrors, redirectTo) {
     // then redirect back to the `redirectTo` URL
     return res.redirect(redirectTo);
   }
-
 
   // Depending on your app's needs, you may choose to look at the Referer header here 
   // and redirect back. Please do so at your own risk!
