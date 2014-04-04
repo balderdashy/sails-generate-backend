@@ -1,6 +1,6 @@
 {
   "name": "sails-generate-backend",
-  "version": "0.10.8",
+  "version": "0.10.9",
   "description": "Generate a backend for Sails.",
   "main": "lib/index.js",
   "scripts": {
