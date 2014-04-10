@@ -147,6 +147,17 @@ module.exports.blueprints = {
    * PUT    /foos/:id?
    * DELETE /foos/:id?
    */
-  pluralize: false
+  pluralize: false,
+  
+  /**
+   * `populate`
+   * 
+   * Whether the blueprint controllers should populate model fetches with
+   * data from other models which are linked by associations
+   * 
+   * If you have a lot of data in one-to-many associations, leaving this on
+   * may result in very heavy api calls
+   */
+  populate: true
 
 };
