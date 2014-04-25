@@ -1,5 +1,5 @@
 /**
- * Models
+ * Default model configuration
  * (sails.config.models)
  *
  * Unless you override them, the following properties will be included
@@ -7,7 +7,7 @@
  */
 
 module.exports.models = {
- 
+
   // Your app's default connection.
   // i.e. the name of one of your app's connections (see `config/connections.js`)
   //
