@@ -120,6 +120,13 @@ module.exports.sockets = {
   */
   authorization: false,
 
+  // Whether to run code which supports legacy usage for connected
+  // sockets running the v0.9 version of the socket client SDK (i.e. sails.io.js).
+  // Disabled in newly generated projects, but enabled as an implicit default (i.e.
+  // legacy usage/v0.9 clients be supported if this property is set to true, but also
+  // if it is removed from this configuration file or set to `undefined`)
+  'backwardsCompatibilityFor0.9SocketClients': false,
+
   // Match string representing the origins that are allowed to connect to the Socket.IO server
   origins: '*:*',
 
