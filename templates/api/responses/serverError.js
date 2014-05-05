@@ -1,6 +1,6 @@
 /**
  * 500 (Server Error) Handler
- * 
+ *
  * Usage:
  * return res.serverError(err);
  *
@@ -26,7 +26,7 @@ module.exports = function serverError (errors) {
     status: statusCode
   };
 
-  // Normalize a {String|Object|Error} or array of {String|Object|Error} 
+  // Normalize a {String|Object|Error} or array of {String|Object|Error}
   // into an array of proper, readable {Error}
   var errorsToDisplay = sails.util.normalizeErrors(errors);
   for (i in errorsToDisplay) {
@@ -64,7 +64,7 @@ module.exports = function serverError (errors) {
   // Make data more readable for view locals
   var locals = _.mapValues(result, function readabilify(value) {
     if (sails.util.isArray(value)) {
-      return _.map(value, sails.util.inspect);
+      return _.map(value, readabilify);
     }
     else if (sails.util.isPlainObject(value)) {
       return sails.util.inspect(value);
