@@ -53,7 +53,8 @@ module.exports = function serverError (err, viewOrRedirect) {
 
   // Make data more readable for view locals
   var locals;
-  if (typeof err !== 'object'){
+  if (!err) { locals = {}; }
+  else if (typeof err !== 'object'){
     locals = {error: err};
   }
   else {

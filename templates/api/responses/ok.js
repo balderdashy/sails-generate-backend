@@ -46,6 +46,15 @@ module.exports = function sendOK (data, viewOrRedirect) {
 		sendJSON(data);
 	}
 
+  // Make data more readable for view locals
+  var locals;
+  if (!data || typeof data !== 'object'){
+    locals = {};
+  }
+  else {
+    locals = data;
+  }
+
   // Serve HTML view or redirect to specified URL
   if (typeof viewOrRedirect === 'string') {
     if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
