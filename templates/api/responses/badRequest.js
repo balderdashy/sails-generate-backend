@@ -47,17 +47,37 @@ module.exports = function badRequest(err, viewOrRedirect) {
     return sendJSON(err);
   }
 
+  // Make data more readable for view locals
+  var locals;
+  if (typeof err !== 'object'){
+    locals = {error: err};
+  }
+  else {
+    var readabilify = function (value) {
+      if (sails.util.isArray(value)) {
+        return _.map(value, readabilify);
+      }
+      else if (sails.util.isPlainObject(value)) {
+        return sails.util.inspect(value);
+      }
+      else return value;
+    };
+    locals = { error: readabilify(err) };
+  }
+
   // Serve HTML view or redirect to specified URL
   if (typeof viewOrRedirect === 'string') {
     if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
       return res.redirect(viewOrRedirect);
     }
-    else return res.view(viewOrRedirect, err, function viewDoesntExist() {
-      return sendJSON(err);
+    else return res.view(viewOrRedirect, locals, function viewReady(viewErr, html) {
+      if (viewErr) return sendJSON(err);
+      else return res.send(html);
     });
   }
-  else return res.view('400', err, function viewDoesntExist() {
-    return sendJSON(err);
+  else return res.view('400', locals, function viewReady(viewErr, html) {
+    if (viewErr) return sendJSON(err);
+    else return res.send(html);
   });
 };
 

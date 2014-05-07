@@ -42,20 +42,26 @@ module.exports = function sendOK (data, viewOrRedirect) {
   }
 
 	// Serve JSON (with optional JSONP support)
-	if (req.wantsJSON || !viewOrRedirect) {
+	if (req.wantsJSON) {
 		sendJSON(data);
 	}
 
-	// Serve HTML view or redirect to specified URL
+  // Serve HTML view or redirect to specified URL
   if (typeof viewOrRedirect === 'string') {
     if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
       return res.redirect(viewOrRedirect);
     }
-    else return res.view(viewOrRedirect, data, function viewDoesntExist() {
-      return sendJSON(data);
+    else return res.view(viewOrRedirect, locals, function viewReady(viewErr, html) {
+      if (viewErr) return sendJSON(data);
+      else return res.send(html);
     });
   }
-  else return res.view(data, function viewDoesntExist() {
-    return sendJSON(data);
+  else return res.view(locals, function viewReady(viewErr, html) {
+    if (viewErr) return sendJSON(data);
+    else return res.send(html);
   });
+
 };
+
+
+
