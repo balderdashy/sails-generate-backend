@@ -1,5 +1,5 @@
 /**
- * 500 (Server Error) Handler
+ * 500 (Server Error) Response
  *
  * Usage:
  * return res.serverError();
