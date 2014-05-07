@@ -26,10 +26,13 @@ module.exports = function sendOK (data, viewOrRedirect) {
     if (!data) {
       return res.send();
     }
-    else if ( req.options.jsonp && !req.isSocket ) {
-      return res.jsonp(data);
+    else {
+      if (typeof data !== 'object') { return res.send(data); }
+      if ( req.options.jsonp && !req.isSocket ) {
+        return res.jsonp(data);
+      }
+      else return res.json(data);
     }
-    else return res.json(data);
   }
 
   // Set status code

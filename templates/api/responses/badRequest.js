@@ -27,10 +27,15 @@ module.exports = function badRequest(err, viewOrRedirect) {
     if (!data) {
       return res.send();
     }
-    else if ( req.options.jsonp && !req.isSocket ) {
-      return res.jsonp(data);
+    else {
+      if (typeof data !== 'object') {
+        data = {error: data};
+      }
+      if ( req.options.jsonp && !req.isSocket ) {
+        return res.jsonp(data);
+      }
+      else return res.json(data);
     }
-    else return res.json(data);
   }
 
   // Set status code
@@ -56,7 +61,7 @@ module.exports = function badRequest(err, viewOrRedirect) {
   else {
     var readabilify = function (value) {
       if (sails.util.isArray(value)) {
-        return _.map(value, readabilify);
+        return sails.util.map(value, readabilify);
       }
       else if (sails.util.isPlainObject(value)) {
         return sails.util.inspect(value);
