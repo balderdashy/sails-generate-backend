@@ -2,50 +2,58 @@
  * 403 (Forbidden) Handler
  *
  * Usage:
- * return res.forbidden('Access denied.');
- * 
- * @param {String|Object|Array} message
- *      optional message to inject into view locals or JSON response
+ * return res.forbidden();
+ * return res.forbidden(err);
+ * return res.forbidden(err, view);
+ * return res.forbidden(err, redirectTo);
  *
+ * e.g.:
+ * ```
+ * return res.forbidden('Access denied.');
+ * ```
  */
 
-module.exports = function forbidden(message) {
+module.exports = function forbidden (err, viewOrRedirect) {
 
-  // Get access to `req`, `res`, `sails`
+  // Get access to `req` & `res`
   var req = this.req;
   var res = this.res;
-  var sails = req._sails;
 
-  var viewFilePath = '403';
-  var statusCode = 403;
-
-  var result = {
-    status: statusCode
-  };
-
-  // Optional message
-  if (message) {
-    result.message = message;
-  }
-
-  // If the user-agent wants a JSON response, send json
-  if (req.wantsJSON) {
-    return res.json(result, result.status);
-  }
-
-  // Set status code and view locals
-  res.status(result.status);
-  for (var key in result) {
-    res.locals[key] = result[key];
-  }
-  // And render view
-  res.render(viewFilePath, result, function(err) {
-    // If the view doesn't exist, or an error occured, send json
-    if (err) {
-      return res.json(result, result.status);
+  // Serve JSON (with optional JSONP support)
+  function sendJSON (data) {
+    if (!data) {
+      return res.send();
     }
+    else if ( req.options.jsonp && !req.isSocket ) {
+      return res.jsonp(data);
+    }
+    else return res.json(data);
+  }
 
-    // Otherwise, serve the `views/403.*` page
-    res.render(viewFilePath);
+  // Set status code
+  res.status(403);
+
+  // Log error to console
+  this.req._sails.log.verbose('Sent 403 ("Forbidden") response');
+  if (err) {
+    this.req._sails.log.verbose(err);
+  }
+
+  // If the user-agent wants JSON, always respond with JSON
+  if (req.wantsJSON) {
+    return sendJSON(err);
+  }
+
+  // Serve HTML view or redirect to specified URL
+  if (typeof viewOrRedirect === 'string') {
+    if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
+      return res.redirect(viewOrRedirect);
+    }
+    else return res.view(viewOrRedirect, err, function viewDoesntExist() {
+      return sendJSON(err);
+    });
+  }
+  else return res.view('403', err, function viewDoesntExist() {
+    return sendJSON(err);
   });
 };

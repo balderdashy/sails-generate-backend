@@ -7,8 +7,6 @@
  * return res.serverError(err, view);
  * return res.serverError(err, redirectTo);
  *
- * @param {Array|Object|String|Error} err     [optional]
- *
  * NOTE:
  * If something throws in a policy or controller, or an internal
  * error is encountered, Sails will call `res.serverError()`
@@ -36,8 +34,10 @@ module.exports = function serverError (err, viewOrRedirect) {
   res.status(500);
 
   // Log error to console
-  this.req._sails.log.error('Server Error (500)');
-  this.req._sails.log.error(err);
+  this.req._sails.log.error('Sent 500 ("Server Error") response');
+  if (err) {
+    this.req._sails.log.error(err);
+  }
 
   // Only include errors in response if application environment
   // is not set to 'production'.  In production, we shouldn't
@@ -47,7 +47,7 @@ module.exports = function serverError (err, viewOrRedirect) {
   }
 
   // If the user-agent wants JSON, always respond with JSON
-  if (req.wantsJSON || !viewOrRedirect) {
+  if (req.wantsJSON) {
     return sendJSON(err);
   }
 

@@ -3,38 +3,62 @@
  *
  * Usage:
  * return res.notFound();
- * 
+ * return res.notFound(err);
+ * return res.notFound(err, view);
+ * return res.notFound(err, redirectTo);
+ *
+ * e.g.:
+ * ```
+ * return res.notFound();
+ * ```
+ *
  * NOTE:
- * If no user-defined route, blueprint route, or static file matches
- * the requested URL, Sails will call `res.notFound()`.
+ * If a request doesn't match any explicit routes (i.e. `config/routes.js`)
+ * or route blueprints (i.e. "shadow routes", Sails will call `res.notFound()`
+ * automatically.
  */
 
-module.exports = function notFound() {
+module.exports = function notFound (err, viewOrRedirect) {
 
-  // Get access to `req`, `res`, `sails`
+  // Get access to `req` & `res`
   var req = this.req;
   var res = this.res;
-  var sails = req._sails;
 
-  var viewFilePath = '404';
-  var statusCode = 404;
-  var result = {
-    status: statusCode
-  };
-
-  // If the user-agent wants a JSON response, send json
-  if (req.wantsJSON) {
-    return res.json(result, result.status);
+  // Serve JSON (with optional JSONP support)
+  function sendJSON (data) {
+    if (!data) {
+      return res.send();
+    }
+    else if ( req.options.jsonp && !req.isSocket ) {
+      return res.jsonp(data);
+    }
+    else return res.json(data);
   }
 
-  res.status(result.status);
-  res.render(viewFilePath, function(err) {
-    // If the view doesn't exist, or an error occured, send json
-    if (err) {
-      return res.json(result, result.status);
-    }
+  // Set status code
+  res.status(404);
 
-    // Otherwise, serve the `views/404.*` page
-    res.render(viewFilePath);
+  // Log error to console
+  this.req._sails.log.verbose('Sent 404 ("Not Found") response');
+  if (err) {
+    this.req._sails.log.verbose(err);
+  }
+
+  // If the user-agent wants JSON, always respond with JSON
+  if (req.wantsJSON) {
+    return sendJSON(err);
+  }
+
+  // Serve HTML view or redirect to specified URL
+  if (typeof viewOrRedirect === 'string') {
+    if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
+      return res.redirect(viewOrRedirect);
+    }
+    else return res.view(viewOrRedirect, err, function viewDoesntExist() {
+      return sendJSON(err);
+    });
+  }
+  else return res.view('404', err, function viewDoesntExist() {
+    return sendJSON(err);
   });
 };

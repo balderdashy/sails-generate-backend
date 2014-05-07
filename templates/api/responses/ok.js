@@ -36,8 +36,10 @@ module.exports = function sendOK (data, viewOrRedirect) {
   res.status(200);
 
   // Log error to console
-  this.req._sails.log.verbose('Sent OK (200) response:');
-  this.req._sails.log.verbose(data);
+  this.req._sails.log.verbose('Sent 200 ("OK") response');
+  if (data) {
+    this.req._sails.log.verbose(data);
+  }
 
 	// Serve JSON (with optional JSONP support)
 	if (req.wantsJSON || !viewOrRedirect) {
