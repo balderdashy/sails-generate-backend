@@ -53,8 +53,8 @@ module.exports.connections = {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
-    user: 'username',
-    password: 'password',
+    user: 'username', // Delete or leave it empty for no authentication
+    password: 'password', // Delete or leave it empty for no authentication
     database: 'your_mongo_db_name_here'
   },
 
