@@ -46,7 +46,7 @@ module.exports = function sendOK (data, viewOrRedirect) {
 
 	// Serve JSON (with optional JSONP support)
 	if (req.wantsJSON) {
-		sendJSON(data);
+		return sendJSON(data);
 	}
 
   // Make data more readable for view locals

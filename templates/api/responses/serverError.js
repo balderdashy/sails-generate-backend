@@ -25,7 +25,7 @@ module.exports = function serverError (err, viewOrRedirect) {
       return res.send();
     }
     else {
-      if (typeof data !== 'object') {
+      if (typeof data !== 'object' || data instanceof Error) {
         data = {error: data};
       }
 

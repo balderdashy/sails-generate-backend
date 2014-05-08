@@ -28,7 +28,7 @@ module.exports = function badRequest(err, viewOrRedirect) {
       return res.send();
     }
     else {
-      if (typeof data !== 'object') {
+      if (typeof data !== 'object' || data instanceof Error) {
         data = {error: data};
       }
       if ( req.options.jsonp && !req.isSocket ) {
