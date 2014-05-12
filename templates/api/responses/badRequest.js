@@ -74,6 +74,9 @@ module.exports = function badRequest(err, viewOrRedirect) {
   // Serve HTML view or redirect to specified URL
   if (typeof viewOrRedirect === 'string') {
     if (viewOrRedirect.match(/^(\/|http:\/\/|https:\/\/)/)) {
+      if (err && typeof req.flash === 'function') {
+        req.flash('error', err);
+      }
       return res.redirect(viewOrRedirect);
     }
     else return res.view(viewOrRedirect, locals, function viewReady(viewErr, html) {
