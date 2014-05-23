@@ -53,8 +53,7 @@ module.exports.views = {
   // to your layout file from `views/` folder. (the file extension, ".ejs", should be omitted)
   //
 
-  layout: '<%= layout %>'
-
+  layout: '<%= layout %>',
 
 
   // Using Multiple Layouts with EJS
@@ -70,5 +69,26 @@ module.exports.views = {
   // But you might override that in some of your controllers with:
   // layout: 'layouts/internal'
 
+  <% } %>
+
+  <%
+  // Only enable partials for view engines which support it
+  if (typeof partials !== 'undefined') { %>
+
+
+  // Partials are simply top-level snippets you can leverage to reuse templates (sub-templates)
+  // for your server-side views.  If you're using handlebars, you can take advantage of
+  // Sails' built-in `layout` support.
+  //
+  // If `false` or empty partials will be located in the same folder as views.
+  // Otherwise, if a string is specified, it will be interpreted as the relative path
+  // to your partial files from `views/` folder.
+  //
+
+  partials: '<%= partials %>'
+
+  <% } else { %>
+
+  partials: false
   <% } %>
 };
