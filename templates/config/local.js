@@ -1,15 +1,16 @@
 /**
  * Local environment settings
  *
- * While you're DEVELOPING your app, this config file should include
- * any settings specifically for your development computer (db passwords, etc.)
+ * While you're DEVELOPING your app, you can create an env subfolder in this
+ * config folder and add a devlopment.js to change settings specifically
+ * for your development computer (db passwords, etc.)
  *
- * When you're ready to deploy your app in PRODUCTION, you can always use this file
+ * When you're ready to deploy your app in PRODUCTION, simply add a production.js
  * for configuration options specific to the server where the app will be deployed.
  * But environment variables are usually the best way to handle production settings.
  *
  * PLEASE NOTE:
- *		This file is included in your .gitignore, so if you're using git
+ *		config/env/development.js is included in your .gitignore, so if you're using git
  *		as a version control solution for your Sails app, keep in mind that
  *		this file won't be committed to your repository!
  *
