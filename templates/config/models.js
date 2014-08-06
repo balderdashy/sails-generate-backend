@@ -18,5 +18,14 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // connection: 'localDiskDb'
+  // connection: 'localDiskDb',
+  //
+  // In a production environment (NODE_ENV==="production") Sails always uses
+  // migrate:"safe" to protect inadvertent deletion of your data.
+  // However during development, you have a few other options for convenience:
+  // 1. safe  - never auto-migrate my database(s). I will do it myself (by hand)
+  // 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+  // 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+  //
+  // migrate: 'alter'
 };
