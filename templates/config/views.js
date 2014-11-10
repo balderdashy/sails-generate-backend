@@ -31,10 +31,8 @@ module.exports.views = {
   ****************************************************************************/
 
   engine: '<%= viewEngine %>',
-  <%
-  // Only enable layout for view engines which support it
-  if (typeof layout !== 'undefined') { %>
 
+<% if (typeof layout !== 'undefined') { %>
   /****************************************************************************
   *                                                                           *
   * Layouts are simply top-level HTML templates you can use as wrappers for   *
@@ -59,8 +57,6 @@ module.exports.views = {
   *                                                                           *
   ****************************************************************************/
 
-  layout: '<%= layout %>'
-
   /****************************************************************************
   *                                                                           *
   * Using Multiple Layouts                                                    *
@@ -79,9 +75,7 @@ module.exports.views = {
   *                                                                           *
   ****************************************************************************/
 
-  <%
-  // Only enable partials for view engines which support it
-  if (typeof partials !== 'undefined') { %>
+  layout: '<%= layout %>',
 
   /****************************************************************************
   *                                                                           *
@@ -94,12 +88,10 @@ module.exports.views = {
   * relative path to your partial files from `views/` folder.                 *
   *                                                                           *
   ****************************************************************************/
-
+<% if (typeof partials !== 'undefined') { %>
   partials: '<%= partials %>'
-
-  <% } else { %>
-
+<% } else { %>
   partials: false
-
-  <% } %>
+<% } %>
+<% } %>
 };
