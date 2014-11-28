@@ -134,10 +134,14 @@ module.exports.sockets = {
   * other advanced use cases, Sails allows you to override the authorization *
   * behavior with your own custom logic by specifying a function, e.g:       *
   *                                                                          *
-  *    authorization: function authSocketConnectionAttempt(reqObj, cb) {     *
+  *    authorization: function authSocketConnectionAttempt(handshake, cb) {  *
   *                                                                          *
-  *        // Any data saved in `handshake` is available in subsequent       *
-  *        requests from this as `req.socket.handshake.*`                    *
+  *        // Any data saved in the socket.io `handshake` object is          *
+  *         available in subsequent requests from this as                    *
+  *         `req.socket.handshake.*`                                         *
+  *       // For additional info on how to construct this function, see:     *
+  *       https://github.com/Automattic/socket.io/wiki/Authorizing           *
+  *                                                                          *
   *                                                                          *
   *        // to allow the connection, call `cb(null, true)`                 *
   *        // to prevent the connection, call `cb(null, false)`              *
