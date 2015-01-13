@@ -100,6 +100,17 @@ module.exports.blueprints = {
   // prefix: '',
 
   /***************************************************************************
+   *                                                                          *
+   * An optional mount path for all REST blueprint routes on a controller.    *
+   * And it do not include `actions` and `shortcuts` routes.                  *
+   * This allows you to take advantage of REST blueprint routing,             *
+   * even if you need to namespace your RESTful API methods                   *
+   *                                                                          *
+   ***************************************************************************/
+
+  // restPrefix: '',
+
+  /***************************************************************************
   *                                                                          *
   * Whether to pluralize controller names in blueprint routes.               *
   *                                                                          *
