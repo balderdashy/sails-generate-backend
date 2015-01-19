@@ -116,7 +116,9 @@ module.exports.sockets = {
 
   /***************************************************************************
   *                                                                          *
-  * This custom afterDisconnect function will be run each time a socket         *
+  * `afterDisconnect`                                                        *
+  *                                                                          *
+  * This custom afterDisconnect function will be run each time a socket      *
   * disconnects                                                              *
   *                                                                          *
   ***************************************************************************/
@@ -125,11 +127,15 @@ module.exports.sockets = {
   //   return cb();
   // },
 
-
-
-
-
-  // More configuration options for Sails+Socket.io:
-  // http://sailsjs.org/#/documentation/reference/sails.config/sails.config.sockets.html
+  /***************************************************************************
+  *                                                                          *
+  * `transports`                                                             *
+  *                                                                          *
+  * A array of allowed transport methods which the clients will try to use.  *
+  * On server environments that don't support sticky sessions, the "polling" *
+  * transport should be disabled.                                            *
+  *                                                                          *
+  ***************************************************************************/
+  // transports: ["polling", "websocket"]
 
 };
