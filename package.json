@@ -15,6 +15,10 @@
   ],
   "author": "balderdashy",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:balderdashy/sails-generate-backend.git"
+  },
   "dependencies": {
     "lodash": ">=2.4.x",
     "merge-defaults": ">=0.1.0"
