@@ -24,7 +24,7 @@
  *
  *
  * For more information, check out:
- * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.local.html
+ * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.local.html
  */
 
 module.exports = {
