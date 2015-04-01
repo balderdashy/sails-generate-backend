@@ -7,7 +7,7 @@
  *
  *
  * For more informationom i18n in Sails, check out:
- * http://sailsjs.org/#/documentation/concepts/Internationalization
+ * http://sailsjs.org/#!/documentation/concepts/Internationalization
  *
  * For a complete list of i18n options, see:
  * https://github.com/mashpie/i18n-node#list-of-configuration-options

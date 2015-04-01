@@ -7,7 +7,7 @@
  * configuration layered on top.
  *
  * For more information on sockets configuration, including advanced config options, see:
- * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.sockets.html
+ * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.sockets.html
  */
 
 module.exports.sockets = {
