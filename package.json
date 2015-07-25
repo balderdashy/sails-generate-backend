@@ -26,6 +26,7 @@
   "devDependencies": {
     "sails-generate": "*",
     "coffeelint": "^1.10.1",
+    "mocha": "^2.2.5",
     "reportback": "*",
     "fs-extra": "*"
   },
