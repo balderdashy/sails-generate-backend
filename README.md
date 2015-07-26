@@ -22,8 +22,10 @@ $ npm install sails-generate-backend
 ##### On the command line
 
 ```sh
-$ sails generate backend 
+$ sails generate backend [--coffee]
 ```
+
+If the coffee option is used, the generator will generate coffeescript files instead of javascript files.
 
 ##### In a node script
 
