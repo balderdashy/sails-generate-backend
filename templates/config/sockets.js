@@ -86,7 +86,7 @@ module.exports.sockets = {
   * known user session, a new user session is created for it.                *
   *                                                                          *
   * In most cases, the user would already have a cookie since they loaded    *
-  * the socket.io client and the initial HTML page you're building.         *
+  * the socket.io client and the initial HTML page you're building.          *
   *                                                                          *
   * However, in the case of cross-domain requests, it is possible to receive *
   * a connection upgrade request WITHOUT A COOKIE (for certain transports)   *

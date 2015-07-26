@@ -49,7 +49,6 @@ module.exports.session = {
   * instance running on localhost is expected. Read more about options at:   *
   * https://github.com/visionmedia/connect-redis                             *
   *                                                                          *
-  *                                                                          *
   ***************************************************************************/
 
   // host: 'localhost',
