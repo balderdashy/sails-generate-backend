@@ -56,7 +56,7 @@ $ node ./bin
 
 `bin/index.js` is a simple script, bundled only for convenience, that runs the generator with hard-coded scope variables.  Please feel free to modify that file however you like!  Also see `CONTRIBUTING.md` for more information on overriding/enhancing generators.
 
-
+Tests must pass with `npm run test` for any modification.
 
 ### Questions?
 
