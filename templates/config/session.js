@@ -88,4 +88,46 @@ module.exports.session = {
   // ssl: false,
   // stringify: true
 
+  /****************************************************************************
+   *                                                                          *
+   * Uncomment the following lines to use your Cassandra adapter as a session *
+   * store                                                                    *
+   *                                                                          *
+   * contactPoints: the list of cassandra instances                           *
+   * keyspace: cassandra keyspace, must be created before running sails       *
+   *                                                                          *
+   ***************************************************************************/
+
+  //adapter: 'cassandra',
+  //contactPoints : [ '127.0.0.1' ],
+  //keyspace: 'sessions',
+
+  /****************************************************************************
+   *                                                                          *
+   * Optional Values for cassandra                                            *
+   * ttl: how long, in seconds, to save the session. if the session cookie    *
+   *      have maxAge, it will be used, otherwise, 86400 (one day).           *
+   * table: the table name to use                                             *
+   * readConsistency: cassandra read consistency, defaults to 1.              *
+   * writeConsistency: cassandra write consistency, defaults to any.          *
+   *   valid consistency values are:
+   *      any:          0x00,                                                 *
+   *      one:          0x01,                                                 *
+   *      two:          0x02,                                                 *
+   *      three:        0x03,                                                 *
+   *      quorum:       0x04,                                                 *
+   *      all:          0x05,                                                 *
+   *      localQuorum:  0x06,                                                 *
+   *      eachQuorum:   0x07,                                                 *
+   *      serial:       0x08,                                                 *
+   *      localSerial:  0x09,                                                 *
+   *      localOne:     0x0a                                                  *
+   *                                                                          *
+   ***************************************************************************/
+
+  //ttl: 24 * 60 * 60 * 7,
+  //table: 'connect_session',
+  //readConsistency: 1,
+  //writeConsistency: 0,
+
 };
