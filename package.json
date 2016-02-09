@@ -20,7 +20,7 @@
     "url": "git@github.com:balderdashy/sails-generate-backend.git"
   },
   "dependencies": {
-    "lodash": ">=2.4.x",
+    "lodash": "~2.4.1",
     "merge-defaults": ">=0.1.0"
   },
   "devDependencies": {
