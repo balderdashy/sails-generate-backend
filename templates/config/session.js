@@ -69,7 +69,7 @@ module.exports.session = {
   * be shared across multiple Sails.js servers.                              *
   *                                                                          *
   * Requires connect-mongo (https://www.npmjs.com/package/connect-mongo)     *
-  * Use version 0.8.4 with Node version <= 0.12                              *
+  * Use version 0.8.2 with Node version <= 0.12                              *
   * Use the latest version with Node >= 4.0                                  *
   *                                                                          *
   ***************************************************************************/
