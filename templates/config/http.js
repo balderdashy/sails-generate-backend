@@ -81,12 +81,12 @@ module.exports.http = {
 
 
   /***************************************************************************
-   * 
-  * The number of milliseconds to cache static assets in production.
-  * These are any flat files like images, scripts, styleshseets, etc.
-  * that are served by the static middleware.  By default, these files
-  * are served from `.tmp/public`, a hidden folder compiled by Grunt.
-  * 
+  *                                                                          *
+  * The number of milliseconds to cache static assets in production.         *
+  * These are any flat files like images, scripts, styleshseets, etc.        *
+  * that are served by the static middleware.  By default, these files       *
+  * are served from `.tmp/public`, a hidden folder compiled by Grunt.        *
+  *                                                                          *
   ***************************************************************************/
 
   // cache: 31557600000
