@@ -1,14 +1,15 @@
-# sails-generate-backend &nbsp; [![NPM version](https://badge.fury.io/js/aim-error-at.svg)](http://badge.fury.io/js/aim-error-at)
+# sails-generate-backend
 
 Core generator which creates the default contents of the `api/` and `config/` folders when you run `sails new` from the Sails command-line interface.
 
+[![NPM](https://nodei.co/npm/sails-generate-backend.png?downloads=true&stars=true)](https://nodei.co/npm/sails-generate-backend/)
 
-### Contributing
+## Contributing
 
 Please observe the guidelines and conventions laid out in the [Sails project contribution guide](https://github.com/balderdashy/sails/blob/master/CONTRIBUTING.md) when opening issues or submitting pull requests.
 
 
-### Getting Help
+## Getting Help
 
 - [Read the docs](http://sailsjs.org/documentation/concepts/extending-sails/generators)
 - [Ask a question](http://stackoverflow.com/questions/tagged/sailsjs?sort=newest&days=30)
@@ -16,7 +17,7 @@ Please observe the guidelines and conventions laid out in the [Sails project con
 - [Tweet @sailsjs](https://twitter.com/sailsjs)
 
 
-### License
+## License
 
 [Sails](http://sailsjs.org) is free and open-source under the [MIT License](http://sails.mit-license.org/).
 
