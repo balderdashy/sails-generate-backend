@@ -1,4 +1,4 @@
-# sails-generate-backend &nbsp; [![NPM](https://nodei.co/npm/sails-generate-backend.png?downloads=true&stars=true)](https://nodei.co/npm/sails-generate-backend/)
+# sails-generate-backend &nbsp; [![NPM version](https://badge.fury.io/js/aim-error-at.svg)](http://badge.fury.io/js/aim-error-at)
 
 Core generator which creates the default contents of the `api/` and `config/` folders when you run `sails new` from the Sails command-line interface.
 
