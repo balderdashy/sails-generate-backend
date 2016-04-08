@@ -11,14 +11,11 @@ Please observe the guidelines and conventions laid out in the [Sails project con
 
 ## Getting Help
 
-- [Read the docs](http://sailsjs.org/documentation/concepts/extending-sails/generators)
-- [Ask a question](http://stackoverflow.com/questions/tagged/sailsjs?sort=newest&days=30)
-- [Chat](http://gitter.im/balderdashy/sails)
-- [Tweet @sailsjs](https://twitter.com/sailsjs)
+First, please [read the docs on generators](http://sailsjs.org/documentation/concepts/extending-sails/generators).  If you have lingering questions, see the <a href="http://sailsjs.org/support" target="_blank" title="Node.js framework for building realtime APIs.">support section of our website</a> for more information, or [tweet](https://twitter.com/sailsjs) at us.
 
 
 ## License
 
 [Sails](http://sailsjs.org) is free and open-source under the [MIT License](http://sails.mit-license.org/).
 
-<a href="http://sailsjs.org" target="_blank" title="Node.js framework for building realtime APIs."><img src="https://github-camo.global.ssl.fastly.net/9e49073459ed4e0e2687b80eaf515d87b0da4a6b/687474703a2f2f62616c64657264617368792e6769746875622e696f2f7361696c732f696d616765732f6c6f676f2e706e67" width=60 alt="Sails.js logo (small)"/></a>
+
