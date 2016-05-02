@@ -26,13 +26,23 @@ module.exports.session = {
 
   /***************************************************************************
   *                                                                          *
-  * Set the session cookie expire time The maxAge is set by milliseconds,    *
-  * the example below is for 24 hours                                        *
+  * Set options for the session cookie. See                                  *
+  * https://github.com/expressjs/session#cookie for more info.               *
   *                                                                          *
   ***************************************************************************/
 
   // cookie: {
-  //   maxAge: 24 * 60 * 60 * 1000
+  //   // Cookie expiration in milliseconds.
+  //   // For example, use 24 * 60 * 60 * 1000 to make sessions expire in 24 hours.
+  //   // Default is null, making it a browser cookie, so the session will
+  //   // last only for as long as the browser is open.
+  //   maxAge: null,
+  //   // Path that the cookie is valid for.
+  //   path: '/',
+  //   // Should the session cookie be HTTP-only? (See https://www.owasp.org/index.php/HttpOnly)
+  //   httpOnly: true,
+  //   // Should the session cookie be secure? (only valid for HTTPS sites)
+  //   secure: false
   // },
 
   /***************************************************************************
