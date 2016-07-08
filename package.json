@@ -1,6 +1,6 @@
 {
   "name": "sails-generate-backend",
-  "version": "0.12.6",
+  "version": "0.12.7",
   "description": "Default generator for backend code files in new Sails projects. Creates the default contents of the `api/` and `config/` folders when you run `sails new` on the command line.",
   "main": "lib/index.js",
   "scripts": {
