@@ -52,9 +52,12 @@ module.exports.session = {
   *                                                                          *
   * Requires connect-redis (https://www.npmjs.com/package/connect-redis)     *
   *                                                                          *
+  * See http://bit.ly/redis-session-config for more information about how to *
+  * configure                                                                *
+  *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'redis',
+  // adapter: 'connect-redis',
 
   /***************************************************************************
   *                                                                          *
