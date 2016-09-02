@@ -62,5 +62,5 @@
 // module.exports.csrf = {
 //   grantTokenViaAjax: true,
 //   origin: '',
-//   routesDisabled: [ 'POST /webhooks/stripe/cancel-subscription' ]
+//   routesDisabled: [ 'POST /webhooks/stripe/*' ]
 // }
