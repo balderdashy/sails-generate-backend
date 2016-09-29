@@ -6,8 +6,9 @@
  * encapsulated WebSocket server, as well as some additional Sails-specific
  * configuration layered on top.
  *
- * For more information on sockets configuration, including advanced config options, see:
- * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.sockets.html
+ * For details on available options for configuring realtime WebSockets in Sails,
+ * including advanced config options, check out:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-sockets
  */
 
 module.exports.sockets = {

@@ -11,7 +11,7 @@
  * http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
  *
  * Note that any of these settings (besides 'allRoutes') can be changed on a per-route basis
- * by adding a "cors" object to the route configuration:
+ * by adding a "cors" dictionary to the route configuration:
  *
  * '/get foo': {
  *   controller: 'foo',
@@ -21,9 +21,8 @@
  *   }
  *  }
  *
- *  For more information on this configuration file, see:
- *  http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.cors.html
- *
+ * For more information on this configuration file, see:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-cors
  */
 
 module.exports.cors = {

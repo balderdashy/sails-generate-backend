@@ -9,11 +9,11 @@
  * Any policy file (e.g. `api/policies/authenticated.js`) can be accessed
  * below by its filename, minus the extension, (e.g. "authenticated")
  *
- * For more information on how policies work, see:
- * http://sailsjs.org/#!/documentation/concepts/Policies
- *
  * For more information on configuring policies, check out:
- * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.policies.html
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-policies
+ *
+ * Or for more about how policies work in general, see:
+ * http://sailsjs.org/documentation/concepts/policies
  */
 
 

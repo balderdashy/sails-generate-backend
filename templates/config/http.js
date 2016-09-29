@@ -3,21 +3,20 @@
  * (sails.config.http)
  *
  * Configuration for the underlying HTTP server in Sails.
- * Only applies to HTTP requests (not WebSockets)
+ * Only applies to HTTP requests (not WebSockets).
  *
  * For more information on configuration, check out:
- * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.http.html
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-http
  */
 
 module.exports.http = {
 
   /****************************************************************************
   *                                                                           *
-  * Express middleware to use for every Sails request. To add custom          *
-  * middleware to the mix, add a function to the middleware config object and *
-  * add its key to the "order" array. The $custom key is reserved for         *
-  * backwards-compatibility with Sails v0.9.x apps that use the               *
-  * `customMiddleware` config option.                                         *
+  * Sails/Express/Connect-compatible middleware to run for every incoming     *
+  * HTTP request.  To add additional, 3rd party HTTP middleware to the mix,   *
+  * add a function as a new key in the `middleware` config dictionary, then   *
+  * add the name of its key to the "order" array.                             *
   *                                                                           *
   ****************************************************************************/
 
@@ -62,10 +61,9 @@ module.exports.http = {
 
   /***************************************************************************
   *                                                                          *
-  * The body parser that will handle incoming multipart HTTP requests. By    *
-  * default as of v0.10, Sails uses                                          *
-  * [skipper](http://github.com/balderdashy/skipper). See                    *
-  * http://www.senchalabs.org/connect/multipart.html for other options.      *
+  * The body parser that will handle incoming multipart HTTP requests.       *
+  * By default,Sails uses [skipper](http://github.com/balderdashy/skipper).  *
+  * See https://github.com/expressjs/body-parser for other options.          *
   *                                                                          *
   * Note that Sails uses an internal instance of Skipper by default; to      *
   * override it and specify more options, make sure to "npm install skipper" *

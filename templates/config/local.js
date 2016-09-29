@@ -6,12 +6,12 @@
  * to store database or email passwords that apply only to you, and shouldn't
  * be shared with others in your organization.
  *
- * These settings take precedence over all other config files, including those
- * in the env/ subfolder.
+ * These settings take precedence over all other files in `config/`, including
+ * those in the env/ subfolder.
  *
  * PLEASE NOTE:
- *		local.js is included in your .gitignore, so if you're using git
- *		as a version control solution for your Sails app, keep in mind that
+ *		By default, `config/local.js` is included in your .gitignore, so if you're
+ *    using git as a version control solution for your Sails app, keep in mind that
  *		this file won't be committed to your repository!
  *
  *		Good news is, that means you can specify configuration for your local
@@ -19,51 +19,65 @@
  *		(like database passwords) to the repo.  Plus, this prevents other members
  *		of your team from commiting their local configuration changes on top of yours.
  *
- *    In a production environment, you probably want to leave this file out
- *    entirely and leave all your settings in env/production.js
+ *    In a production environment, you'll probably want to leave this file out
+ *    entirely and configure all of your production overrides using `env/production.js`,
+ *    or environment variables, or a combination of both.
  *
  *
  * For more information, check out:
- * http://sailsjs.org/#!/documentation/anatomy/myApp/config/local.js.html
+ * http://sailsjs.org/documentation/concepts/configuration/the-local-js-file
+ *
+ * For a reference of misc. top-level settings not covered by other config files, see:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config
  */
 
 module.exports = {
 
+  // Any configuration settings may be overridden below, including custom
+  // configuration specifically for your app (e.g. Stripe, Mailgun, Twitter, etc.)
+
+
   /***************************************************************************
-   * Your SSL certificate and key, if you want to be able to serve HTTP      *
-   * responses over https:// and/or use websockets over the wss:// protocol  *
-   * (recommended for HTTP, strongly encouraged for WebSockets)              *
+   * SSL/TLS (transport-layer security) is critical for preventing potential *
+   * man-in-the-middle attacks.  Without a protocol like SSL/TLS, web basics *
+   * like securely transmitting login credentials and credit card numbers    *
+   * would be much more complicated and troublesome.                         *
    *                                                                         *
-   * In this example, we'll assume you created a folder in your project,     *
-   * `config/ssl` and dumped your certificate/key files there:               *
+   * SSL/TLS is not only important for HTTP requests (`https://`); it's also *
+   * necessary for WebSockets (over `wss://`).  Fortunately, you only need   *
+   * to worry configuring SSL settings in once place: `sails.config.ssl`     *
+   *                                                                         *
+   * This is only relevant if you want your Sails server to manage SSL.      *
+   * As your app gains traffic, you will probably want to scale to multiple  *
+   * servers, and set up a load balancer.  Most of the time, you will end up *
+   * terminating SSL at your load balancer for performance/simplicity.       *
+   * In that case, since SSL/TLS will have already been dealt with before    *
+   * packets reach your Sails app, you won't need to use this setting.       *
+   * (For example, if you're terminating SSL/TLS at your load balancer, or   *
+   * This is also true if you're using a PaaS or other host with a built-in  *
+   * load balancer (e.g. Heroku.)                                            *
+   *                                                                         *
+   * > For more information about configuring SSL in Sails, see:             *
+   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
    ***************************************************************************/
 
-  // ssl: {
-  //   ca: require('fs').readFileSync(__dirname + './ssl/my_apps_ssl_gd_bundle.crt'),
-  //   key: require('fs').readFileSync(__dirname + './ssl/my_apps_ssl.key'),
-  //   cert: require('fs').readFileSync(__dirname + './ssl/my_apps_ssl.crt')
-  // },
+  // ssl: undefined,
 
   /***************************************************************************
-   * The `port` setting determines which TCP port your app will be           *
-   * deployed on.                                                            *
+   * The TCP port that this Sails app listens on for incoming requests.      *
    *                                                                         *
-   * Ports are a transport-layer concept designed to allow many different    *
-   * networking applications run at the same time on a single computer.      *
-   * More about ports:                                                       *
-   * http://en.wikipedia.org/wiki/Port_(computer_networking)                 *
+   * If an explicit `port` config is specified, then it takes precedence.    *
+   * If not, then Sails will use the `PORT` environment variable, if one is  *
+   * set.  Otherwise it falls back to port 1337.                             *
    *                                                                         *
-   * By default, if it's set, Sails uses the `PORT` environment variable.    *
-   * Otherwise it falls back to port 1337.                                   *
-   *                                                                         *
-   * In env/production.js, you'll probably want to change this setting       *
-   * to 80 (http://) or 443 (https://) if you have an SSL certificate        *
+   * > For more information about configuring the port used by Sails, see:   *
+   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
    ***************************************************************************/
 
-  // port: process.env.PORT || 1337,
+  // port: 1337,
 
   /***************************************************************************
-   * The runtime "environment" of your Sails app is either typically         *
+   * The runtime "environment" of your Sails app is usually either           *
    * 'development' or 'production'.                                          *
    *                                                                         *
    * In development, your Sails app will go out of its way to help you       *
@@ -78,8 +92,12 @@ module.exports = {
    * By default, Sails sets its environment using the `NODE_ENV` environment *
    * variable.  If NODE_ENV is not set, Sails will run in the                *
    * 'development' environment.                                              *
+   *                                                                         *
+   * > For more details and best practices about configuring your app's      *
+   * > environment, check out:                                               *
+   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
    ***************************************************************************/
 
-   // environment: process.env.NODE_ENV || 'development'
+   // environment: 'development'
 
 };

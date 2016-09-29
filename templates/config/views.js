@@ -7,8 +7,12 @@
  * configure your templating language/framework of choice and configure
  * Sails' layout support.
  *
- * For more information on views and layouts, check out:
- * http://sailsjs.org/#!/documentation/concepts/Views
+ *
+ * For details on available options for configuring server-side views, check out:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-views
+ *
+ * For more background information on views and partials in Sails, check out:
+ * http://sailsjs.org/documentation/concepts/views
  */
 
 module.exports.views = {

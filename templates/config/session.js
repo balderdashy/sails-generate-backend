@@ -8,8 +8,9 @@
  * and Socket.io and hooks into Sails' middleware interpreter to allow you to access
  * and auto-save to `req.session` with Socket.io the same way you would with Express.
  *
- * For more information on configuring the session, check out:
- * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.session.html
+ * For a detailed rundown of _all_ available options for configuring session support
+ * in Sails, check out:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-session
  */
 
 module.exports.session = {
