@@ -9,6 +9,13 @@ Default generator for backend code files in new Sails projects. Creates the defa
 
 Please observe the guidelines and conventions laid out in the [Sails project contribution guide](https://github.com/balderdashy/sails/blob/master/CONTRIBUTING.md) when opening issues or submitting pull requests.
 
+#### Branches
+
+| Branch       | Purpose       |
+|:-------------|:--------------|
+| `sails-0.12` | The latest stable release of this generator, used by Sails v0.12.x (latest stable as Sep 2016.)
+| `master`     | The future version of this generator for usewith Sails v1.0. |
+
 
 ## Getting Help
 
