@@ -1,25 +1,31 @@
 /**
- * Connections
- * (sails.config.connections)
+ * Datastores
+ * (sails.config.datastores)
  *
- * `Connections` are like "saved settings" for your adapters.  What's the difference between
- * a connection and an adapter, you might ask?  An adapter (e.g. `sails-mysql`) is generic--
- * it needs some additional information to work (e.g. your database host, password, user, etc.)
- * A `connection` is that additional information.
+ * Datastores are like "saved settings" for your adapters.
  *
- * Each model must have a `connection` property (a string) which is references the name of one
- * of these connections.  If it doesn't, the default `connection` configured in `config/models.js`
- * will be applied.  Of course, a connection can (and usually is) shared by multiple models.
- * .
- * Note: If you're using version control, you should put your passwords/api keys
- * in `config/local.js`, environment variables, or use another strategy.
- * (this is to prevent you inadvertently sensitive credentials up to your repository.)
+ * What's the difference between a datastore and an adapter, you might ask?
+ * An adapter like `sails-mysql` is generic and stateless.  In order for it
+ * to communicate between your Sails app and a particular database, it needs
+ * some additional configuration.  A `datastore` is that additional information.
  *
- * For more information on configuration, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-connections
+ * The default datastore for your app is configured in `config/models.js`. Of
+ * course, a datastore can be (and usually is) shared by multiple models.  And
+ * unless otherwise specified, all of your models will share the default datastore.
+ * But if necessary, any model definition can override this by specifying a
+ * `datastore` property that references the name of one of a configured datastore
+ * (like the ones below.)
+ *
+ * > Note: If you're using version control, it's a good idea to avoid pushing
+ * > sensitive credentials like passwords, keys, API tokens up to your source code
+ * > repository.  Instead, consider using another strategy like environment variables
+ * > or the `config/local.js` file.
+ *
+ * For more information on configuring your datastores, check out:
+ * http://sailsjs.org/documentation/reference/configuration/sails-config-datastores
  */
 
-module.exports.connections = {
+module.exports.datastores = {
 
   /***************************************************************************
   *                                                                          *
@@ -72,7 +78,6 @@ module.exports.connections = {
   *                                                                          *
   * Run: npm install sails-postgresql                                        *
   *                                                                          *
-  *                                                                          *
   ***************************************************************************/
   // somePostgresqlServer: {
   //   adapter: 'sails-postgresql',
@@ -83,10 +88,13 @@ module.exports.connections = {
   // }
 
 
-  /***************************************************************************
-  *                                                                          *
-  * More adapters: https://github.com/balderdashy/sails                      *
-  *                                                                          *
-  ***************************************************************************/
+  /*****************************************************************************************
+  *                                                                                        *
+  * More adapters:                                                                         *
+  *                                                                                        *
+  * http://sailsjs.org/documentation/concepts/extending-sails/adapters/available-adapters  *
+  *                                                                                        *
+  ******************************************************************************************/
+
 
 };

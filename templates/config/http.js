@@ -67,8 +67,8 @@ module.exports.http = {
   *                                                                          *
   * Note that Sails uses an internal instance of Skipper by default; to      *
   * override it and specify more options, make sure to "npm install skipper" *
-  * in your project first.  You can also specify a different body parser or  *
-  * a custom function with req, res and next parameters (just like any other *
+  * in your app first.  You can also specify a different body parser or a    *
+  * custom function with req, res and next parameters (just like any other   *
   * middleware function).                                                    *
   *                                                                          *
   ***************************************************************************/

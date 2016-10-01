@@ -1,6 +1,6 @@
 # sails-generate-backend
 
-Default generator for backend code files in new Sails projects. Creates the default contents of the `api/` and `config/` folders when you run `sails new` on the command line.
+Default generator for backend code files in new Sails apps. Creates the default contents of the `api/` and `config/` folders when you run `sails new` on the command line.
 
 
 [![NPM](https://nodei.co/npm/sails-generate-backend.png?downloads=true&stars=true)](https://nodei.co/npm/sails-generate-backend/)
