@@ -10,7 +10,7 @@
     "generate",
     "plugin"
   ],
-  "author": "balderdashy",
+  "author": "Mike McNeil",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   "sailsGenerator": {
     "type": "backend",
     "behavior": "Core generator",
-    "sailsVersion": "~0.10.0"
+    "sailsVersion": "^1.0.0"
   }
 }
