@@ -83,19 +83,19 @@ module.exports.sockets = {
   * If no valid cookie was sent, a temporary session will be created for the *
   * connecting socket.                                                       *
   *                                                                          *
-  * If the cookie sent as part of the connection request doesn't match any   *
-  * known user session, a new user session is created for it.                *
+  * If the cookie sent as part of the socket connection request doesn't      *
+  * match any known user session, a new user session is created for it.      *
   *                                                                          *
   * In most cases, the user would already have a cookie since they loaded    *
-  * the socket.io client and the initial HTML page you're building.         *
+  * the socket.io client and the initial HTML page you're building.          *
   *                                                                          *
   * However, in the case of cross-domain requests, it is possible to receive *
   * a connection upgrade request WITHOUT A COOKIE (for certain transports)   *
   * In this case, there is no way to keep track of the requesting user       *
   * between requests, since there is no identifying information to link      *
   * him/her with a session. The sails.io.js client solves this by connecting *
-  * to a CORS/jsonp endpoint first to get a 3rd party cookie(fortunately this*
-  * works, even in Safari), then opening the connection.                     *
+  * to a CORS/jsonp endpoint first to get a 3rd party cookie(fortunately     *
+  * this works, even in Safari), then opening the connection.                *
   *                                                                          *
   * You can also pass along a ?cookie query parameter to the upgrade url,    *
   * which Sails will use in the absence of a proper cookie e.g. (when        *
