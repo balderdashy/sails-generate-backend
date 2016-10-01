@@ -26,8 +26,10 @@ module.exports = {
   // configuration specifically for your app (e.g. Stripe, Mailgun, Twitter, etc.)
 
   /***************************************************************************
-   * Set the default database connection for models in the production        *
-   * environment (see config/connections.js and config/models.js )           *
+   *                                                                         *
+   * Set the default database datastore for models in the production         *
+   * environment (see `config/datastore.js` and `config/models.js` )         *
+   *                                                                         *
    ***************************************************************************/
 
   // models: {
@@ -35,19 +37,23 @@ module.exports = {
   // },
 
   /***************************************************************************
+   *                                                                         *
    * Set the port in the production environment to 80                        *
    * (if deploying to a PaaS like Heroku or Deis, you may not need to worry  *
    *  about changing the port, because it is handled automatically)          *
+   *                                                                         *
    ***************************************************************************/
 
   // port: 80,
 
   /***************************************************************************
-   * Set the log level in production environment to "error"                  *
+   *                                                                         *
+   * Set the log level in production environment to 'error'                  *
+   *                                                                         *
    ***************************************************************************/
 
   // log: {
-  //   level: "error"
+  //   level: 'error'
   // }
 
 };
