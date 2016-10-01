@@ -3,9 +3,6 @@
   "version": "0.12.7",
   "description": "Default generator for backend code files in new Sails apps. Creates the default contents of the `api/` and `config/` folders when you run `sails new` on the command line.",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "keywords": [
     "backend",
     "generator",
@@ -20,13 +17,7 @@
     "url": "git@github.com:balderdashy/sails-generate-backend.git"
   },
   "dependencies": {
-    "lodash": "~2.4.1",
-    "merge-defaults": ">=0.1.0"
-  },
-  "devDependencies": {
-    "sails-generate": "*",
-    "reportback": "*",
-    "fs-extra": "*"
+    "lodash": "3.10.1"
   },
   "sailsGenerator": {
     "type": "backend",
