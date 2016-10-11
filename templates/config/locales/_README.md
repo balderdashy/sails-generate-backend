@@ -1,7 +1,7 @@
 # Internationalization / Localization Settings
 
 ## Introduction
-See **[Concepts > Internationalization](http://sailsjs.org/documentation/concepts/internationalization)**.
+See **[Concepts > Internationalization](http://sailsjs.com/docs/concepts/internationalization)**.
 
 ## Locales
 All locale files live under `config/locales`. Here is where you can add translations
@@ -26,5 +26,5 @@ Remember that the keys are case sensitive and require exact matches when accesse
 ```
 
 ## Configuration
-Localization/internationalization support in Sails can be globally configured using [`sails.config.i18n`](http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n).
+Localization/internationalization support in Sails can be globally configured using [`sails.config.i18n`](http://sailsjs.com/docs/reference/configuration/sails-config-i-18-n).
 By convention, this is set in `config/i18n.js`, from where you can set your supported locales.

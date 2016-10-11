@@ -6,11 +6,11 @@
  * per-model basis by setting a top-level properties in the model definition.
  *
  * For details about all available model settings, see:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-models
+ * http://sailsjs.com/docs/reference/configuration/sails-config-models
  *
  * For more general background on Sails model settings, and how to configure
  * them on a project-wide or per-model basis, see:
- * http://sailsjs.org/documentation/concepts/models-and-orm/model-settings
+ * http://sailsjs.com/docs/concepts/models-and-orm/model-settings
  */
 
 module.exports.models = {
@@ -26,8 +26,8 @@ module.exports.models = {
   * > in your datastore configuration (see `config/datastores.js`).            *
   * >                                                                          *
   * > For more info, see:                                                      *
-  * > http://sailsjs.org/documentation/concepts/ORM/model-settings#?datastore  *
-  * > http://sailsjs.org/documentation/reference/configuration/datastores      *
+  * > http://sailsjs.com/docs/concepts/ORM/model-settings#?datastore  *
+  * > http://sailsjs.com/docs/reference/configuration/datastores      *
   *                                                                            *
   *****************************************************************************/
 
@@ -45,7 +45,7 @@ module.exports.models = {
   * > auto-migrations on your production database.                           *
   * >                                                                        *
   * > For more info, see:                                                    *
-  * > http://sailsjs.org/documentation/concepts/ORM/model-settings#?migrate  *
+  * > http://sailsjs.com/docs/concepts/ORM/model-settings#?migrate  *
   *                                                                          *
   ***************************************************************************/
 

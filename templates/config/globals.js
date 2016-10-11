@@ -6,7 +6,7 @@
  * automatically by Sails.
  *
  * For more information on configuration, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-globals
+ * http://sailsjs.com/docs/reference/configuration/sails-config-globals
  */
 
 module.exports.globals = {

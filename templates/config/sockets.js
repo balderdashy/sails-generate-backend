@@ -8,7 +8,7 @@
  *
  * For details on available options for configuring realtime WebSockets in Sails,
  * including advanced config options, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-sockets
+ * http://sailsjs.com/docs/reference/configuration/sails-config-sockets
  */
 
 module.exports.sockets = {

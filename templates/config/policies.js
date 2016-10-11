@@ -10,10 +10,10 @@
  * below by its filename, minus the extension, (e.g. "authenticated")
  *
  * For more information on configuring policies, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-policies
+ * http://sailsjs.com/docs/reference/configuration/sails-config-policies
  *
  * Or for more about how policies work in general, see:
- * http://sailsjs.org/documentation/concepts/policies
+ * http://sailsjs.com/docs/concepts/policies
  */
 
 

@@ -9,10 +9,10 @@
  *
  *
  * For details on available options for configuring server-side views, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-views
+ * http://sailsjs.com/docs/reference/configuration/sails-config-views
  *
  * For more background information on views and partials in Sails, check out:
- * http://sailsjs.org/documentation/concepts/views
+ * http://sailsjs.com/docs/concepts/views
  */
 
 module.exports.views = {

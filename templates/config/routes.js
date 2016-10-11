@@ -18,7 +18,7 @@
  *
  *
  * For more information on configuring custom routes, check out:
- * http://sailsjs.org/documentation/concepts/routes/custom-routes
+ * http://sailsjs.com/docs/concepts/routes/custom-routes
  */
 
 module.exports.routes = {

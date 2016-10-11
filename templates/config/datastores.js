@@ -22,7 +22,7 @@
  * > or the `config/local.js` file.
  *
  * For more information on configuring your datastores, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-datastores
+ * http://sailsjs.com/docs/reference/configuration/sails-config-datastores
  */
 
 module.exports.datastores = {
@@ -92,7 +92,7 @@ module.exports.datastores = {
   *                                                                                        *
   * More adapters:                                                                         *
   *                                                                                        *
-  * http://sailsjs.org/documentation/concepts/extending-sails/adapters/available-adapters  *
+  * http://sailsjs.com/docs/concepts/extending-sails/adapters/available-adapters  *
   *                                                                                        *
   ******************************************************************************************/
 

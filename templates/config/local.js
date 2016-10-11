@@ -25,10 +25,10 @@
  *
  *
  * For more information, check out:
- * http://sailsjs.org/documentation/concepts/configuration/the-local-js-file
+ * http://sailsjs.com/docs/concepts/configuration/the-local-js-file
  *
  * For a reference of misc. top-level settings not covered by other config files, see:
- * http://sailsjs.org/documentation/reference/configuration/sails-config
+ * http://sailsjs.com/docs/reference/configuration/sails-config
  */
 
 module.exports = {
@@ -58,7 +58,7 @@ module.exports = {
    * load balancer (e.g. Heroku.)                                            *
    *                                                                         *
    * > For more information about configuring SSL in Sails, see:             *
-   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
+   * > http://sailsjs.com/docs/reference/configuration/sails-config *
    ***************************************************************************/
 
   // ssl: undefined,
@@ -71,7 +71,7 @@ module.exports = {
    * set.  Otherwise it falls back to port 1337.                             *
    *                                                                         *
    * > For more information about configuring the port used by Sails, see:   *
-   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
+   * > http://sailsjs.com/docs/reference/configuration/sails-config *
    ***************************************************************************/
 
   // port: 1337,
@@ -95,7 +95,7 @@ module.exports = {
    *                                                                         *
    * > For more details and best practices about configuring your app's      *
    * > environment, check out:                                               *
-   * > http://sailsjs.org/documentation/reference/configuration/sails-config *
+   * > http://sailsjs.com/docs/reference/configuration/sails-config *
    ***************************************************************************/
 
    // environment: 'development'

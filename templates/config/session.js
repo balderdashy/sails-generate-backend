@@ -10,7 +10,7 @@
  *
  * For a detailed rundown of _all_ available options for configuring session support
  * in Sails, check out:
- * http://sailsjs.org/documentation/reference/configuration/sails-config-session
+ * http://sailsjs.com/docs/reference/configuration/sails-config-session
  */
 
 module.exports.session = {

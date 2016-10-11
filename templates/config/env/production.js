@@ -11,13 +11,13 @@
  * > add any private data to this file!
  *
  * For more information on configuring your app using environments, visit:
- * http://sailsjs.org/documentation/concepts/configuration#?environmentspecific-files-config-env
+ * http://sailsjs.com/docs/concepts/configuration#?environmentspecific-files-config-env
  *
  * For a reference of misc. top-level settings not covered by other config files, see:
- * http://sailsjs.org/documentation/reference/configuration/sails-config
+ * http://sailsjs.com/docs/reference/configuration/sails-config
  *
  * And to read more about configuring your Sails app for production, check out:
- * http://sailsjs.org/documentation/concepts/deployment
+ * http://sailsjs.com/docs/concepts/deployment
  */
 
 module.exports = {
