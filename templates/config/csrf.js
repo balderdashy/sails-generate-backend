@@ -2,14 +2,15 @@
  * Cross-Site Request Forgery Protection Settings
  * (sails.config.csrf)
  *
- * When CSRF protection is enabled, all non-GET requests to the Sails server must be accompanied
- * by a special token, identified as either the '_csrf' parameter or 'X-CSRF-Token' header.
+ * When CSRF protection is enabled in your Sails app, all non-GET requests to the server
+ * must be accompanied by a special "CSRF token", which can be included as either the
+ * '_csrf' parameter or the 'X-CSRF-Token' header.
  *
  * CSRF tokens are like limited-edition swag.  While a session tells the server that a user
  * "is who they say they are", a csrf token tells the server they "were where they say they were".
  *
  * Using tokens protects your Sails app against cross-site request forgery (or CSRF) attacks.
- * A would-be attacker needs not only a user's session cookie, but also this timestamped,
+ * A would-be attacker needs not only a user's session cookie, but also this limited-time,
  * secret CSRF token, which is refreshed/granted when the user visits a URL on your app's domain.
  *
  * This allows us to have certainty that our users' requests haven't been hijacked,
@@ -52,11 +53,8 @@
  * the token by sending a request to the route where you mounted `security.grantCsrfToken`,
  * or better yet, harvest the token from view locals using the `exposeLocalsToBrowser` partial.
  *
- * For more information on CSRF in Sails, check out:
- * http://sailsjs.com/docs/concepts/security/csrf
- *
- * For more information on this configuration file, including info on CSRF + CORS, see:
- * http://sailsjs.com/docs/reference/configuration/sails-config-csrf
+ * For additional options and more information, see:
+ * http://sailsjs.com/anatomy/config/csrf-js
  */
 
 /****************************************************************************

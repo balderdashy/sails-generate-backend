@@ -2,37 +2,21 @@
  * Cross-Origin Resource Sharing (CORS) Settings
  * (sails.config.cors)
  *
- * CORS is like a more modern version of JSONP-- it allows your server/API
- * to successfully respond to requests from client-side JavaScript code
- * running on some other domain (e.g. google.com)
- * Unlike JSONP, it works with POST, PUT, and DELETE requests
+ * CORS is like a more modern version of JSONP-- it allows your application
+ * to circumvent browsers' same-origin policy, so that the responses from
+ * your Sails app hosted on one domain (e.g. example.com) can be received in
+ * the client-side JavaScript code from a page you trust hosted on _some other_
+ * domain (e.g. trustedsite.net).
  *
- * For more information on CORS, check out:
- * http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
- *
- * Note that any of these settings (besides 'allRoutes') can be changed on a per-route basis
- * by adding a "cors" dictionary to the route configuration:
- *
- * '/get foo': {
- *   controller: 'foo',
- *   action: 'bar',
- *   cors: {
- *     origin: 'http://foobar.com,https://owlhoot.com'
- *   }
- *  }
- *
- * For more information on this configuration file, see:
- * http://sailsjs.com/docs/reference/configuration/sails-config-cors
+ * For additional options and more information, see:
+ * http://sailsjs.com/anatomy/config/cors-js
  */
 
 module.exports.cors = {
 
   /***************************************************************************
   *                                                                          *
-  * Allow CORS on all routes by default? If not, you must enable CORS on a   *
-  * per-route basis by either adding a "cors" configuration object to the    *
-  * route config, or setting "cors:true" in the route config to use the      *
-  * default settings below.                                                  *
+  * Apply global CORS settings to all routes by default?                     *
   *                                                                          *
   ***************************************************************************/
 
@@ -40,38 +24,31 @@ module.exports.cors = {
 
   /***************************************************************************
   *                                                                          *
-  * Which domains which are allowed CORS access? This can be a               *
-  * comma-delimited list of hosts (beginning with http:// or https://) or    *
-  * "*" to allow all domains CORS access.                                    *
+  * Which 3rd party domains should be allowed access via CORS?  This can be  *
+  * a comma-delimited list of hosts ('example.com,api.example.com,etc.net')  *
+  * or '*', to allow all domains CORS access.                                *
   *                                                                          *
   ***************************************************************************/
 
-  // origin: '*',
+  // allow3rdPartyOrigins: '*',
 
   /***************************************************************************
   *                                                                          *
-  * Allow cookies to be shared for CORS requests?                            *
+  * Should Sails allow cookies for CORS requests?                            *
+  * (When false, cookies are ignored.)                                       *
   *                                                                          *
   ***************************************************************************/
 
-  // credentials: true,
+  // credentials: false,
 
   /***************************************************************************
   *                                                                          *
-  * Which methods should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests (see article linked above for more info)  *
+  * Which request headers should be allowed to be accessed in actions when   *
+  * CORS requests are received? This is only used in response to preflight   *
+  * requests.                                                                *
   *                                                                          *
   ***************************************************************************/
 
-  // methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
-
-  /***************************************************************************
-  *                                                                          *
-  * Which headers should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests.                                          *
-  *                                                                          *
-  ***************************************************************************/
-
-  // headers: 'content-type'
+  // allowRequestHeaders: 'content-type',
 
 };

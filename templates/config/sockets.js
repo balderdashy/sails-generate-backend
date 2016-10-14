@@ -62,7 +62,9 @@ module.exports.sockets = {
   * agents where 3rd party cookies are possible, this allows `sails.io.js`   *
   * to connect the socket to the cross-origin Sails server using a user's    *
   * existing session cookie, if they have one (for example, if they were     *
-  * already logged in.)                                                      *
+  * already logged in.)  Without this, virtual requests you make from the    *
+  * socket will not be able to access the same session, and will need to     *
+  * reauthenticate using some other mechanism.                               *
   *                                                                          *
   ***************************************************************************/
 
