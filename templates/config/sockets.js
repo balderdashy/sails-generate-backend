@@ -55,18 +55,18 @@ module.exports.sockets = {
 
  /***************************************************************************
   *                                                                          *
-  * Whether to expose a 'get /__getcookie' route with CORS support that sets *
-  * a cookie (this is used by the sails.io.js socket client to get access to *
-  * a 3rd party cookie and to enable sessions).                              *
-  *                                                                          *
-  * Warning: Currently in this scenario, CORS settings apply to interpreted  *
-  * requests sent via a socket.io connection that used this cookie to        *
-  * connect, even for non-browser clients! (e.g. iOS apps, toasters, node.js *
-  * unit tests)                                                              *
+  * Whether to expose a 'GET /__getcookie' route that sets an HTTP-only      *
+  * session cookie.  By default, if it detects that it is about to connect   *
+  * a cross-origin server, the Sails socket client (`sails.io.js`) sends a   *
+  * JSONP request (over HTTP) to this endpoint before connecting.  For user  *
+  * agents where 3rd party cookies are possible, this allows `sails.io.js`   *
+  * to connect the socket to the cross-origin Sails server using a user's    *
+  * existing session cookie, if they have one (for example, if they were     *
+  * already logged in.)                                                      *
   *                                                                          *
   ***************************************************************************/
 
-  // grant3rdPartyCookie: true,
+  // grant3rdPartyCookie: false,
 
 
 
