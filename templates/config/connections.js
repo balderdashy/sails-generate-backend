@@ -37,7 +37,7 @@ module.exports.connections = {
   * MySQL is the world's most popular relational database.                   *
   * http://en.wikipedia.org/wiki/MySQL                                       *
   *                                                                          *
-  * Run: npm install sails-mysql                                             *
+  * Run: npm install sails-mysql@for-sails-0.12 --save                       *
   *                                                                          *
   ***************************************************************************/
   // someMysqlServer: {
@@ -53,7 +53,7 @@ module.exports.connections = {
   * MongoDB is the leading NoSQL database.                                   *
   * http://en.wikipedia.org/wiki/MongoDB                                     *
   *                                                                          *
-  * Run: npm install sails-mongo                                             *
+  * Run: npm install sails-mongo@for-sails-0.12 --save                       *
   *                                                                          *
   ***************************************************************************/
   // someMongodbServer: {
@@ -70,7 +70,7 @@ module.exports.connections = {
   * PostgreSQL is another officially supported relational database.          *
   * http://en.wikipedia.org/wiki/PostgreSQL                                  *
   *                                                                          *
-  * Run: npm install sails-postgresql                                        *
+  * Run: npm install sails-postgresql@for-sails-0.12 --save                  *
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
