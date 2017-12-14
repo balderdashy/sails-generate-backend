@@ -14,7 +14,7 @@ Please observe the guidelines and conventions laid out in the [Sails project con
 | Branch       | Purpose       |
 |:-------------|:--------------|
 | [`sails-0.12`](https://github.com/balderdashy/sails-generate-backend/tree/sails-0.12) | The latest stable release of this generator, used by Sails v0.12.x (latest stable as Sep 2016.)
-| [`master`](https://github.com/balderdashy/sails-generate-backend/tree/master)     | The future version of this generator for usewith Sails v1.0. |
+| [`master`](https://github.com/balderdashy/sails-generate-backend/tree/master)     | The future version of this generator for use with Sails v1.0. |
 
 
 ## Getting Help
